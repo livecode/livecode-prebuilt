@@ -27,14 +27,14 @@
 					[
 						'OS == "linux"',
 						{
-							'variables':
-							{
-								'prebuilt_libs': 'prebuilt/lib/linux-i386',
-							},
-							
-							'ldflags':
+							# Gyp doesn't seem to handle non-absolute paths here properly...
+							'library_dirs':
 							[
-								'-L<(prebuilt_libs)',
+								'<(src_top_dir_abs)/prebuilt/lib/linux/<(target_arch)',
+							],
+							
+							'libraries':
+							[
 								'-Wl,-whole-archive',
 								'-lcustomcrypto',
 								'-lcustomssl',
