@@ -33,6 +33,16 @@
 						},
 					],
 					[
+						'OS == "ios"',
+						{
+							'libraries':
+							[
+								'lib/ios/$(SDK_NAME)/libcustomcrypto.a',
+								'lib/ios/$(SDK_NAME)/libcustomssl.a',
+							],
+						},
+					],
+					[
 						'OS == "linux"',
 						{
 							# Gyp doesn't seem to handle non-absolute paths here properly...
