@@ -10,6 +10,14 @@
 			'target_name': 'libopenssl',
 			'type': 'none',
 
+			'direct_dependent_settings':
+			{
+				'include_dirs':
+				[
+					'../thirdparty/libopenssl/include',
+				],
+			},
+
 			'link_settings':
 			{
 				'conditions':
@@ -39,6 +47,21 @@
 								'-lcustomcrypto',
 								'-lcustomssl',
 								'-Wl,-no-whole-archive',
+							],
+						},
+					],
+					[
+						'OS == "win"',
+						{
+							'library_dirs':
+							[
+								'lib/win/<(target_arch)',
+							],
+							
+							'libraries':
+							[
+								'-llibeay32',
+								'-lssleay32',
 							],
 						},
 					],
