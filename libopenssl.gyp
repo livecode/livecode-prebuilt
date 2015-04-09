@@ -61,6 +61,23 @@
 						},
 					],
 					[
+						'OS == "android"',
+						{
+							'library_dirs':
+							[
+								'<(src_top_dir_abs)/prebuilt/lib/android/<(target_arch)',
+							],
+							
+							'libraries':
+							[
+								'-Wl,-whole-archive',
+								'-lcustomcrypto',
+								'-lcustomssl',
+								'-Wl,-no-whole-archive',
+							],
+						},
+					],
+					[
 						'OS == "win"',
 						{
 							'library_dirs':
