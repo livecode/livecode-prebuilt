@@ -48,6 +48,7 @@
 							'libraries':
 							[
 								'-lcurl',
+								'-lrt',
 							],
 						},
 					],
